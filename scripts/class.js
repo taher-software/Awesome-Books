@@ -69,3 +69,26 @@ let removeBtns = Array.from(document.querySelectorAll('.remove'));
 removeBtns.forEach((element) => {
   element.addEventListener('click',removeBook,false);
 });
+
+// set local storage
+const titleBook = document.getElementById('title-book');
+const authorBook = document.getElementById('author-book');
+function setStorage() {
+  const inputBook = {
+    bookTitle: document.getElementById('title-book').value,
+    bookAuthor: document.getElementById('author-book').value,
+  };
+  localStorage.setItem('BookIdentifier', JSON.stringify(inputBook));
+}
+function setDesign() {
+  const book = JSON.parse(localStorage.getItem('BookIdentifier'));
+  document.getElementById('title-book').value = book.bookTitle;
+  document.getElementById('author-book').value = book.bookAuthor;
+}
+if (!localStorage.getItem('BookIdentifier')) {
+  setStorage();
+} else {
+  setDesign();
+}
+titleBook.onchange = setStorage;
+authorBook.onchange = setStorage;
