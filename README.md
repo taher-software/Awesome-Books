@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet) 
 
 # Javascript project 1 : Awesome Books 
-In this project, we will built a basic website that allows users to add/remove books from a list. We achieved that by using JavaScript objects and arrays.
+In this project, we built a basic website that allows users to add/remove books from a list. We achieved that by using JavaScript objects and arrays.
 ## Built With 🔨
 
 - HTML
