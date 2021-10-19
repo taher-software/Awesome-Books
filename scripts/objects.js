@@ -2,7 +2,11 @@
 const booksDiv = document.querySelector('.books');
 const addBtn = document.querySelector('.add-book');
 let removeBook = Array.from(document.querySelectorAll('.Remove'));
-const books = [];
+let books = [];
+if (localStorage.getItem('books')) {
+  books = JSON.parse(localStorage.getItem('books'));
+}
+
 /* utilities */
 function newBook(tit, auth) {
   const title = tit;
@@ -12,10 +16,18 @@ function newBook(tit, auth) {
     author,
   };
   books.push(myBook);
+  localStorage.setItem('books', JSON.stringify(books));
 }
 function remove(tit) {
-  const ind = books.indexOf(tit);
+  let ind = 0;
+  for (let i; i < books.length; i += 1) {
+    if (books[i].title === tit) {
+      break;
+    }
+    ind += 1;
+  }
   books.splice(ind, 1);
+  localStorage.setItem('books', JSON.stringify(books));
 }
 function removeBooks(e) {
   const targetELement = e.target;
@@ -40,7 +52,7 @@ function updateBooks() {
 /* Loop into Books array */
 booksDiv.innerHTML = '';
 books.forEach((elem) => {
-  booksDiv.innerHTML += `<div> <p> ${elem.title} by ${elem.author}</p> <input type= 'button' class= 'Remove' value='Remove' <hr>></div> `;
+  booksDiv.innerHTML += `<div> <p> ${elem.title} by ${elem.author}</p> <input type= 'button' class= 'Remove' value='Remove'> <hr></div> `;
 });
 /* tracking events */
 addBtn.addEventListener('click', updateBooks);
