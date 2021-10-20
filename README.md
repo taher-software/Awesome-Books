@@ -2,6 +2,10 @@
 
 # Javascript project 1 : Awesome Books 
 In this project, we built a basic website that allows users to add/remove books from a list. We achieved that by using JavaScript objects and arrays.
+<p align="center">
+<img src="https://github.com/Taher-web-dev/Awesome-Books/blob/styling-core-elements/statics/images/template-overview.png">
+</p>
+
 ## Built With 🔨
 
 - HTML
@@ -10,7 +14,7 @@ In this project, we built a basic website that allows users to add/remove books 
 
 ## Live Demo
 
-!(https://taher-web-dev.github.io/Awesome-Books/)
+<a href="https://taher-web-dev.github.io/Awesome-Books/"> Live </a>
 
 ### Install
 

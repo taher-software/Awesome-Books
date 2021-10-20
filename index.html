@@ -5,33 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awesome Books</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <h1>Awesome Books</h1>
+    <header>
+      <nav>
+          <img src="statics/images/hamburguer-button.png" alt="hamburger-button" class="hamburger">
+          <img src="statics/images/logo-icon.png" alt="logo" class="logo">
+          <img src="statics/images/chat-icon.png" alt="chat-icon" class="chat-icon">
+      </nav>
+    </header>
+    <div>
+        <h1>Awesome Books </h1>
 
-    <div class="books">
-        <p>Lorem ipsum</p>
-        <p>Testeroo Testyy</p>
-        <input value="Remove" type="button" class="remove">
-
-        <hr>
-
-        <p>Second book</p>
-        <p>Testeroo Testyy</p>
-        <input value="Remove" type="button" class="remove">
-        <hr>
-
+        <div class="books">
+            <p>Lorem ipsum</p>
+            <p>Testeroo Testyy</p>
+            <input value="Remove" type="button" class="remove">
+    
+            <hr>
+    
+            <p>Second book</p>
+            <p>Testeroo Testyy</p>
+            <input value="Remove" type="button" class="remove">
+            <hr>
+    
+        </div>
+        <hr class="sep">
+        <div class= "form-wrapper">
+            <h2> Add a new book</h2>
+        <div class= "wrapper-books">
+          <div class="input-books">
+            <input type="text" id="title-book" placeholder="    | Title">
+            <input type="text"  id="author-book" placeholder="    |Author">
+            <input type="button" class="add-book" value="Add">
+         </div>
+        </div>
+     </div>
     </div>
-        
-    <br>
-    <form action="php" method="post">
-        <input type="text" id="title-book" placeholder="Title">
-        <br>
-        <br>
-        <input type="text"  id="author-book" placeholder="Author">
-        <br><br>
-        <input type="button" class="add-book" value="Add">
-    </form>
+  
 
     <script src="scripts/class.js"> </script>
 </body>

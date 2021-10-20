@@ -30,6 +30,7 @@ const targetDiv = document.querySelector('.books');
 let myBooks = new Books([]);
 const addBtn = document.querySelector('.add-book');
 let removeBtns = Array.from(document.querySelectorAll('.remove'));
+let nbrGrid = 0;
 /* create books object variables */
 if (localStorage.getItem('myBooks')) {
   myBooks = new Books(JSON.parse(localStorage.getItem('myBooks')));
@@ -38,24 +39,53 @@ if (localStorage.getItem('myBooks')) {
 function displayBooks(bookObejct) {
   const bookArray = bookObejct.books;
   bookArray.forEach((element) => {
-    targetDiv.innerHTML += `<div><p>${element.title} by ${element.author}</p> <input type='button' value='remove' class='remove'> <hr></div>`;
+    const newBlock = document.createElement('div');
+    newBlock.innerHTML = `<p>${element.title} by ${element.author}</p> <input type='button' value='remove' class='remove'> <hr>`;
+    nbrGrid += 1;
+    newBlock.style.gridRow = `${nbrGrid} / span 1`;
+    newBlock.className = 'book-card';
+    targetDiv.style.gridTemplateRows = `repeat(${nbrGrid}, 1fr)`;
+    if (nbrGrid % 2 === 0) {
+      newBlock.style.backgroundColor = '#fff';
+    } else {
+      newBlock.style.backgroundColor = 'rgb(221,221,221)';
+    }
+    targetDiv.appendChild(newBlock);
   });
 }
 function removeBook(e) {
-  console.log('works...');
   const targetBtn = e.target;
   const targetBlock = targetBtn.parentNode;
   const bookData = Array.from(targetDiv.children)[0].textContent;
   const bookTitle = bookData.split('by')[0];
   myBooks.remove(bookTitle);
-  localStorage.setItem('MyBooks', JSON.stringify(myBooks.books));
-  targetBlock.innerHTML = '';
+  localStorage.setItem('myBooks', JSON.stringify(myBooks.books));
+  targetDiv.removeChild(targetBlock);
+  nbrGrid -= 1;
+  targetDiv.style.gridTemplateRows = `repeat(${nbrGrid}, 1fr)`;
+  const children = Array.from(targetDiv.children);
+  let j = 1;
+  children.forEach((elem) => {
+    elem.style.gridRow = `${j} / span 1`;
+    j += 1;
+  });
 }
 function addNewBook() {
   const bookTitle = document.getElementById('title-book').value;
   const bookAuthor = document.getElementById('author-book').value;
+  const newBlock = document.createElement('div');
+  newBlock.innerHTML = `<p>${bookTitle} by ${bookAuthor}</p> <input type='button' value='remove' class='remove'> <hr>`;
   myBooks.add(bookTitle, bookAuthor);
-  targetDiv.innerHTML += `<div><p>${bookTitle} by ${bookAuthor}</p> <input type='button' value='remove' class='remove'> <hr></div>`;
+  nbrGrid += 1;
+  newBlock.style.gridRow = `${nbrGrid} / span 1`;
+  newBlock.className = 'book-card';
+  if (nbrGrid % 2 === 0) {
+    newBlock.style.backgroundColor = '#fff';
+  } else {
+    newBlock.style.backgroundColor = 'rgb(221,221,221)';
+  }
+  targetDiv.style.gridTemplateRows = `repeat(${nbrGrid}, 1fr)`;
+  targetDiv.appendChild(newBlock);
   localStorage.setItem('myBooks', JSON.stringify(myBooks.books));
   removeBtns = Array.from(document.querySelectorAll('.remove'));
   removeBtns.forEach((element) => {
@@ -64,6 +94,7 @@ function addNewBook() {
 }
 /* Load page */
 targetDiv.innerHTML = '';
+targetDiv.style.display = 'grid';
 displayBooks(myBooks);
 /* tracking add button */
 addBtn.addEventListener('click', addNewBook);
