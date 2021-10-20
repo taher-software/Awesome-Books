@@ -1,17 +1,45 @@
 /* I use this file to style index.html file. */
-header { background-color: rgb(32, 32, 32); }
+header {
+  background-color: rgb(32, 32, 32);
+  margin: 1%;
+}
 
 nav {
   display: flex;
   justify-content: space-between;
   padding: 6.5% 0;
+  align-items: center;
 }
 
-.hamburger { margin-left: 7.5%; }
+#project-title {
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.2;
+  font-weight: 550;
+  font-size: 18px;
+  margin-left: 2.5%;
+}
 
-.logo { width: 10%; }
+#menu {
+  margin-right: 2.5%;
+  display: flex;
+  width: 52%;
+  list-style: none;
+  padding: 0;
+  justify-content: space-between;
+}
 
-.chat-icon { margin-right: 7.5%; }
+.section-link {
+  color: white;
+  border-right: 1px solid white;
+  padding: 0 5% 0 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.2;
+  font-weight: 550;
+  font-size: 16px;
+}
+
+.last { border: none; }
 
 h1 {
   color: white;
@@ -152,12 +180,7 @@ h2 {
     align-items: center;
   }
 
-  .hamburger { display: none; }
-
-  .logo {
-    margin-left: 7.5%;
-    height: 60%;
-  }
+  #menu { width: 15%; }
 
   h1 {
     width: 80%;
