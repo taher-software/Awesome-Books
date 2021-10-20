@@ -8,12 +8,20 @@
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet"> 
 </head>
 <body>
+    <header style= "background-color: rgb(32,32,32);">
+      <nav style = "display: flex;justify-content: space-between; padding: 6.5% 0;">
+          <img src="statics/images/hamburguer-button.png" alt="hamburger-button" class="hambutger" 
+          style= "margin-left: 7.5%;">
+          <img src="statics/images/logo-icon.png" alt="logo" class="logo" style="width: 10%;">
+          <img src="statics/images/chat-icon.png" alt="chat-icon" class="chat-icon" style= "margin-right: 7.5%;">
+      </nav>
+    </header>
     <div>
-        <h1 class="text-center">Awesome Books</h1>
+        <h1 class="text-center" style="margin-bottom: 0;">Awesome Books </h1>
 
         <div class="books">
             <p>Lorem ipsum</p>
@@ -30,7 +38,9 @@
         </div>
             
         <br>
+        <hr class="sep">
         <form action="php" method="post">
+            <h2> Add a new book</h2>
             <input type="text" id="title-book" placeholder="Title">
             <br>
             <br>

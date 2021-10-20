@@ -3,10 +3,43 @@ h1{
     color: white;
     background-color: black;
     margin: 0;
-    padding: 5% 0;
-    font-family: 'Staatliches', cursive;
+    padding: 10% 0;
+    font-family: 'Staatliches', cursive, sans-serif;
+    background-image: url(../statics/images/triangle.png);
+    background-repeat: no-repeat;
+    background-position: 49% 100%;
+    background-size: 9% 14%;
+    margin-bottom: 0;
+}
+.book-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 10% 0;
+  background-color: rgb(32, 32, 32);
+  align-items: center;
 }
 
-.remove{
+.book-card p {
+  max-width: 40%;
+  color: white;
+  font-family: monospace, cursive, sans-serif;
+  margin-left: 5%;
+}
 
+.book-card hr { display: none;}
+
+.remove {
+  margin-right: 5%;
+  min-width: 30%;
+  min-height: 40%;
+}
+
+.sep {
+  width: 20%;
+  color: black;
+  background-color: black;
+}
+
+h2 {
+  color: balck;
 }
