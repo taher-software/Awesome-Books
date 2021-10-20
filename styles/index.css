@@ -10,6 +10,7 @@ h1{
     background-position: 49% 100%;
     background-size: 9% 14%;
     margin-bottom: 0;
+    text-align: center;
 }
 .book-card {
   display: flex;
@@ -40,6 +41,60 @@ h1{
   background-color: black;
 }
 
-h2 {
-  color: balck;
+.form-wrapper {
+  background-color: rgb(61,73,89);
+  padding-bottom: 25%;
 }
+h2 {
+  color: #8a8abd;
+  text-align: center;
+  padding-top: 10%;
+  font-family: 'Staatliches', cursive, sans-serif;
+}
+
+.wrapper-books {
+  width : 80%;
+  height: 50%;
+  margin: 20% 10% 0 10%;
+  border: 1px solid rgb(102, 114, 129);
+}
+
+.input-books { margin: 5% ;}
+
+#title-book {
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  background-color: rgb(159, 171, 183);
+  border: none;
+}
+
+#author-book {
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  background-color: rgb(159, 171, 183);
+  border: none;
+}
+
+#title-book::placeholder {
+  background-image: url(../statics/images/book-icon.png);
+  background-repeat: no-repeat;
+  background-size: 30px 25px;
+  background-position: 5% 20%;
+  font-family: monospace, sans-serif;
+  color: white;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+#author-book::placeholder {
+    background-image: url(../statics/images/auth-icon.png);
+    background-repeat: no-repeat;
+    background-size: 30px 25px;
+    background-position: 5% 20%;
+    font-family: monospace, sans-serif;
+    color: white;
+    line-height: 1.6;
+    font-size: 18px;
+  }
