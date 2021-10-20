@@ -45,6 +45,11 @@ function displayBooks(bookObejct) {
     newBlock.style.gridRow = `${nbrGrid} / span 1`;
     newBlock.className = 'book-card';
     targetDiv.style.gridTemplateRows = `repeat(${nbrGrid}, 1fr)`;
+    if (nbrGrid % 2 === 0) {
+      newBlock.style.backgroundColor = '#fff';
+    } else {
+      newBlock.style.backgroundColor = 'rgb(221,221,221)';
+    }
     targetDiv.appendChild(newBlock);
   });
 }
@@ -55,8 +60,6 @@ function removeBook(e) {
   const bookTitle = bookData.split('by')[0];
   myBooks.remove(bookTitle);
   localStorage.setItem('myBooks', JSON.stringify(myBooks.books));
-  /* targetBlock.innerHTML = '';
-  targetBlock.style.display = 'none'; */
   targetDiv.removeChild(targetBlock);
   nbrGrid -= 1;
   targetDiv.style.gridTemplateRows = `repeat(${nbrGrid}, 1fr)`;
@@ -76,6 +79,11 @@ function addNewBook() {
   nbrGrid += 1;
   newBlock.style.gridRow = `${nbrGrid} / span 1`;
   newBlock.className = 'book-card';
+  if (nbrGrid % 2 === 0) {
+    newBlock.style.backgroundColor = '#fff';
+  } else {
+    newBlock.style.backgroundColor = 'rgb(221,221,221)';
+  }
   targetDiv.style.gridTemplateRows = `repeat(${nbrGrid}, 1fr)`;
   targetDiv.appendChild(newBlock);
   localStorage.setItem('myBooks', JSON.stringify(myBooks.books));

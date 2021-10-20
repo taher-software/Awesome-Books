@@ -27,19 +27,22 @@ h1 {
   text-align: center;
 }
 
+.books { margin-top: 5%; }
+
 .book-card {
   display: flex;
   justify-content: space-between;
   padding: 10% 0;
-  background-color: rgb(32, 32, 32);
   align-items: center;
 }
 
 .book-card p {
   max-width: 40%;
-  color: white;
+  color: #541f1f;
   font-family: monospace, cursive, sans-serif;
   margin-left: 5%;
+  font-weight: 550;
+  line-height: 1.6;
 }
 
 .book-card hr { display: none; }
@@ -75,7 +78,13 @@ h2 {
   border: 1px solid rgb(102, 114, 129);
 }
 
-.input-books { margin: 5%; }
+.input-books {
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 190px;
+}
 
 #title-book {
   width: 100%;
@@ -119,15 +128,67 @@ h2 {
   background-color: rgb(63, 100, 158);
   border: none;
   color: white;
-  padding: 15px 32px;
+  height: 50px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
   margin: 4px 2px;
   cursor: pointer;
-  width: 100%;
+  width: 40%;
   font-family: monospace, sans-serif;
   font-weight: 600;
   line-height: 1.4;
+  align-self: flex-end;
+}
+
+@media screen and (min-width: 768px) {
+  header { height: 100px; }
+
+  nav {
+    padding: 0;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger { display: none; }
+
+  .logo {
+    margin-left: 7.5%;
+    height: 60%;
+  }
+
+  h1 {
+    width: 80%;
+    padding: 5% 0;
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+
+  .book-card {
+    padding: 2.5% 0;
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  .form-wrapper {
+    width: 60%;
+    margin-left: 20%;
+    padding-bottom: 10%;
+    margin-bottom: 5%;
+  }
+
+  h2 { padding-top: 5%; }
+
+  .wrapper-books { margin-top: 0; }
+
+  .add-book { width: 25%; }
+
+  .sep { margin-top: 2%; }
+
+  .books { margin-bottom: 0; }
+
+  #title-book::placeholder { background-position: 2.5% 5%; }
+  #author-book::placeholder { background-position: 2.5% 5%; }
 }
