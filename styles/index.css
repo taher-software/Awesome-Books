@@ -1,17 +1,32 @@
 /* I use this file to style index.html file. */
-h1{
-    color: white;
-    background-color: black;
-    margin: 0;
-    padding: 10% 0;
-    font-family: 'Staatliches', cursive, sans-serif;
-    background-image: url(../statics/images/triangle.png);
-    background-repeat: no-repeat;
-    background-position: 49% 100%;
-    background-size: 9% 14%;
-    margin-bottom: 0;
-    text-align: center;
+header { background-color: rgb(32, 32, 32); }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 6.5% 0;
 }
+
+.hamburger { margin-left: 7.5%; }
+
+.logo { width: 10%; }
+
+.chat-icon { margin-right: 7.5%; }
+
+h1 {
+  color: white;
+  background-color: black;
+  margin: 0;
+  padding: 10% 0;
+  font-family: 'Staatliches', cursive, sans-serif;
+  background-image: url(../statics/images/triangle.png);
+  background-repeat: no-repeat;
+  background-position: 49% 100%;
+  background-size: 9% 14%;
+  margin-bottom: 0;
+  text-align: center;
+}
+
 .book-card {
   display: flex;
   justify-content: space-between;
@@ -27,7 +42,7 @@ h1{
   margin-left: 5%;
 }
 
-.book-card hr { display: none;}
+.book-card hr { display: none; }
 
 .remove {
   margin-right: 5%;
@@ -42,9 +57,10 @@ h1{
 }
 
 .form-wrapper {
-  background-color: rgb(61,73,89);
+  background-color: rgb(61, 73, 89);
   padding-bottom: 25%;
 }
+
 h2 {
   color: #8a8abd;
   text-align: center;
@@ -53,13 +69,13 @@ h2 {
 }
 
 .wrapper-books {
-  width : 80%;
+  width: 80%;
   height: 50%;
   margin: 20% 10% 0 10%;
   border: 1px solid rgb(102, 114, 129);
 }
 
-.input-books { margin: 5% ;}
+.input-books { margin: 5%; }
 
 #title-book {
   width: 100%;
@@ -89,29 +105,29 @@ h2 {
 }
 
 #author-book::placeholder {
-    background-image: url(../statics/images/auth-icon.png);
-    background-repeat: no-repeat;
-    background-size: 30px 25px;
-    background-position: 5% 20%;
-    font-family: monospace, sans-serif;
-    color: white;
-    line-height: 1.6;
-    font-size: 18px;
-  }
+  background-image: url(../statics/images/auth-icon.png);
+  background-repeat: no-repeat;
+  background-size: 30px 25px;
+  background-position: 5% 20%;
+  font-family: monospace, sans-serif;
+  color: white;
+  line-height: 1.6;
+  font-size: 18px;
+}
 
-  .add-book {
-    background-color:rgb(63, 100, 158);
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    margin: 4px 2px;
-    cursor: pointer;
-    width: 100%;
-    font-family: monospace, sans-serif;
-    font-weight: 600;
-    line-height: 1.4;
-  }
+.add-book {
+  background-color: rgb(63, 100, 158);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%;
+  font-family: monospace, sans-serif;
+  font-weight: 600;
+  line-height: 1.4;
+}

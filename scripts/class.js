@@ -55,8 +55,8 @@ function removeBook(e) {
   const bookTitle = bookData.split('by')[0];
   myBooks.remove(bookTitle);
   localStorage.setItem('myBooks', JSON.stringify(myBooks.books));
-  /*targetBlock.innerHTML = '';
-  targetBlock.style.display = 'none';*/
+  /* targetBlock.innerHTML = '';
+  targetBlock.style.display = 'none'; */
   targetDiv.removeChild(targetBlock);
   nbrGrid -= 1;
   targetDiv.style.gridTemplateRows = `repeat(${nbrGrid}, 1fr)`;
@@ -65,7 +65,7 @@ function removeBook(e) {
   children.forEach((elem) => {
     elem.style.gridRow = `${j} / span 1`;
     j += 1;
-  })
+  });
 }
 function addNewBook() {
   const bookTitle = document.getElementById('title-book').value;
