@@ -216,3 +216,25 @@ h2 {
   #title-book::placeholder { background-position: 2.5% 5%; }
   #author-book::placeholder { background-position: 2.5% 5%; }
 }
+
+
+footer {
+  
+  color: white;
+  width: 98%;
+  margin: 1%;
+}
+
+.web-footer{
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p{
+  margin-left: 1%;
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  color: #5e5e67;
+}
