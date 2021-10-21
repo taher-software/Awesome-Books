@@ -37,6 +37,7 @@ nav {
   line-height: 1.2;
   font-weight: 550;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .last { border: none; }

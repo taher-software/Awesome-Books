@@ -98,20 +98,31 @@ function addNewBook() {
 }
 
 function trackMenu(e){
+  const targetElem = e.target;
   const targetLink = e.target.textContent;
   if (targetLink.trim() === 'List') {
     allBooks.style.display = 'block';
     formWrapper.style.display= 'none';
     contactWrapper.style.display = 'none';
+    sectionLinks.forEach((elem) => {
+      elem.style.color = 'white';
+    });
   } else if (targetLink.trim() === 'Add new') {
     allBooks.style.display = 'none';
     formWrapper.style.display= 'block';
     contactWrapper.style.display = 'none';
+    sectionLinks.forEach((elem) => {
+      elem.style.color = 'white';
+    });
   } else if (targetLink.trim() === 'Contact') {
     allBooks.style.display = 'none';
     formWrapper.style.display= 'none';
     contactWrapper.style.display = 'block';
+    sectionLinks.forEach((elem) => {
+      elem.style.color = 'white';
+    });
   }
+  targetElem.style.color = 'blue';
 }
 /* Load page */
 targetDiv.innerHTML = '';
@@ -119,6 +130,13 @@ targetDiv.style.display = 'grid';
 allBooks.style.display = 'block';
 formWrapper.style.display= 'none';
 contactWrapper.style.display = 'none';
+sectionLinks[0].style.color = 'blue';
+for (let i; i < sectionLinks.length; i += 1) {
+  if (i >= 1){
+    sectionLinks[i].style.color = 'white';
+  }
+}
+
 displayBooks(myBooks);
 /* tracking add button */
 addBtn.addEventListener('click', addNewBook);
