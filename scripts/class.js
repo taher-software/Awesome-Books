@@ -33,7 +33,12 @@ const sectionLinks = document.querySelectorAll('.section-link');
 const allBooks = document.getElementById('all-books');
 const formWrapper = document.querySelector('.form-wrapper');
 const contactWrapper = document.getElementById('contact');
+const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 let removeBtns = Array.from(document.querySelectorAll('.remove'));
+const timeElement = document.querySelector('.time');
+/* eslint-disable */
+const DateTime = luxon.DateTime.now();
+/* eslint-disable */
 let nbrGrid = 0;
 /* create books object variables */
 if (localStorage.getItem('myBooks')) {
@@ -97,26 +102,26 @@ function addNewBook() {
   });
 }
 
-function trackMenu(e){
+function trackMenu(e) {
   const targetElem = e.target;
   const targetLink = e.target.textContent;
   if (targetLink.trim() === 'List') {
     allBooks.style.display = 'block';
-    formWrapper.style.display= 'none';
+    formWrapper.style.display = 'none';
     contactWrapper.style.display = 'none';
     sectionLinks.forEach((elem) => {
       elem.style.color = 'white';
     });
   } else if (targetLink.trim() === 'Add new') {
     allBooks.style.display = 'none';
-    formWrapper.style.display= 'block';
+    formWrapper.style.display = 'block';
     contactWrapper.style.display = 'none';
     sectionLinks.forEach((elem) => {
       elem.style.color = 'white';
     });
   } else if (targetLink.trim() === 'Contact') {
     allBooks.style.display = 'none';
-    formWrapper.style.display= 'none';
+    formWrapper.style.display = 'none';
     contactWrapper.style.display = 'block';
     sectionLinks.forEach((elem) => {
       elem.style.color = 'white';
@@ -124,15 +129,23 @@ function trackMenu(e){
   }
   targetElem.style.color = 'blue';
 }
+function customiseTime(h, m, s) {
+  if (h <= 12) {
+    return `${h}:${m}:${s} am`;
+  }
+
+  return `${h - 12}:${m}:${s} pm`;
+}
 /* Load page */
+timeElement.textContent = `${weekDays[DateTime.weekday]} ${DateTime.month}th ${DateTime.year}, ${customiseTime(DateTime.hour, DateTime.minute, DateTime.second)}`;
 targetDiv.innerHTML = '';
 targetDiv.style.display = 'grid';
 allBooks.style.display = 'block';
-formWrapper.style.display= 'none';
+formWrapper.style.display = 'none';
 contactWrapper.style.display = 'none';
 sectionLinks[0].style.color = 'blue';
 for (let i; i < sectionLinks.length; i += 1) {
-  if (i >= 1){
+  if (i >= 1) {
     sectionLinks[i].style.color = 'white';
   }
 }
@@ -145,7 +158,7 @@ removeBtns = Array.from(document.querySelectorAll('.remove'));
 removeBtns.forEach((element) => {
   element.addEventListener('click', removeBook, false);
 });
-/* tracking menu links */ 
+/* tracking menu links */
 sectionLinks.forEach((elem) => {
   elem.addEventListener('click', trackMenu, false);
 });
