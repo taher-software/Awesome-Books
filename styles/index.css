@@ -86,6 +86,7 @@ h1 {
   width: 20%;
   color: black;
   background-color: black;
+  margin-left: 40%;
 }
 
 .form-wrapper {
@@ -116,19 +117,29 @@ h2 {
 }
 
 #title-book {
-  width: 100%;
+  width: 97.5%;
   height: 50px;
-  padding: 0;
+  padding: 0 0 0 2.5%;
   background-color: rgb(159, 171, 183);
   border: none;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+  font-weight: 650;
 }
 
 #author-book {
-  width: 100%;
+  width: 97.5%;
   height: 50px;
-  padding: 0;
+  padding: 0 0 0 2.5%;
   background-color: rgb(159, 171, 183);
   border: none;
+  font-family: monospace, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+  font-weight: 650;
 }
 
 #title-book::placeholder {

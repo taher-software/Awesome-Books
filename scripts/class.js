@@ -100,6 +100,9 @@ function addNewBook() {
   removeBtns.forEach((element) => {
     element.addEventListener('click', removeBook, false);
   });
+  allBooks.style.display = 'block';
+  formWrapper.style.display = 'none';
+  contactWrapper.style.display = 'none';
 }
 
 function trackMenu(e) {
